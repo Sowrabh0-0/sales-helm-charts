@@ -27,9 +27,9 @@ spec:
             - containerPort: {{ .Values.auth.port }}
           envFrom:
             - secretRef:
-                name: backend-secret
+                name: {{ .Values.secrets.backend.name }}
             - configMapRef:
-                name: backend-config
+                name: {{ .Values.configmaps.backend.name }}
           resources:
             limits:
               cpu: {{ .Values.auth.resources.limits.cpu }}

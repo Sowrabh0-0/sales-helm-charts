@@ -34,6 +34,6 @@ spec:
               memory: {{ .Values.salesUi.resources.limits.memory }}
           envFrom:
             - secretRef:
-                name: backend-secret
+                name: {{ .Values.secrets.frontend.name }}
             - configMapRef:
-                name: backend-config
+                name: {{ .Values.configmaps.frontend.name }}
