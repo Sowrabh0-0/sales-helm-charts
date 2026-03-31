@@ -172,6 +172,11 @@ database:
 # ---------------- GATEWAY ----------------
 
 gateway:
+  gatewayName: sales-gateway
+  namespace: {{ .Values.namespaces.gateway }}
+  gatewayClassName: kgateway
+  listeners:
+    port: 80
   enabled: true
   port: 80
 
