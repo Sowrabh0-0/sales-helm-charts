@@ -1,42 +1,49 @@
-namespace: sales-test-ns
+global:
+  environment: test
+
+namespaces:
+  application: sales-test-ns
+  gateway: sales-gateway-ns
 
 auth:
-  image: kubectlandchill/auth:test
-  replicas: 1
-  port: 3000
+  replicaCount: 1
+  image:
+    repository: kubectlandchill/auth
+    tag: test
 
 customer:
-  image: kubectlandchill/customer:test
-  replicas: 1
-  port: 3000
+  replicaCount: 1
+  image:
+    repository: kubectlandchill/customer
+    tag: test
 
 order:
-  image: kubectlandchill/order:test
-  replicas: 1
-  port: 3000
+  replicaCount: 1
+  image:
+    repository: kubectlandchill/order
+    tag: test
 
 invoice:
-  image: kubectlandchill/invoice:test
-  replicas: 1
-  port: 3000
+  replicaCount: 1
+  image:
+    repository: kubectlandchill/invoice
+    tag: test
 
 payment:
-  image: kubectlandchill/payment:test
-  replicas: 1
-  port: 3000
+  replicaCount: 1
+  image:
+    repository: kubectlandchill/payment
+    tag: test
 
-frontend:
-  image: kubectlandchill/sales-invoice-ui:test
-  replicas: 1
+salesUi:
+  replicaCount: 1
+  image:
+    repository: kubectlandchill/sales-invoice-ui
+    tag: test
   port: 3000
-  servicePort: 8000
-
-gateway:
-  name: sales-gateway
-  namespace: sales-gateway-ns
 
 hpa:
-  enabled: false  
+  enabled: false
 
 resources:
   requests:
