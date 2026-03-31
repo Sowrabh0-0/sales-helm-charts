@@ -1,6 +1,8 @@
-services:
-  auth:
-    replicas: 3
+global:
+  environment: prod
+
+auth:
+  replicaCount: 3
 
 hpa:
   enabled: true
