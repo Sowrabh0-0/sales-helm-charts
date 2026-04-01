@@ -37,3 +37,4 @@ spec:
                 name: backend-secret
             - configMapRef:
                 name: {{ .Values.configmaps.frontend.name }}
+          
