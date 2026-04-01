@@ -1,6 +1,7 @@
 global:
   environment: dev
   imagePullPolicy: IfNotPresent
+  domain: opslora.com
 
 namespaces:
   application: sales-test-ns

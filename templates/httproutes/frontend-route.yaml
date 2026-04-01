@@ -4,6 +4,8 @@ metadata:
   name: {{ .Values.routes.ui.routeName }}
   namespace: {{ .Values.namespaces.application }}
 spec:
+  hostnames:
+    - {{ .Values.global.domain }}
   parentRefs:
   - name: {{ .Values.gateway.gatewayName }}
     namespace: {{ .Values.namespaces.gateway }}
